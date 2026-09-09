@@ -703,11 +703,23 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "(rate(windows_logical_disk_write_latency_seconds_total{instance=~\"$server\", volume=~\"[A-Z]:\"}[5m]) / rate(windows_logical_disk_writes_total{instance=~\"$server\", volume=~\"[A-Z]:\"}[5m])) * 1000",
+          "expr": "(rate(windows_logical_disk_write_latency_seconds_total{instance=~\"$server\", volume=~\"[A-Z]:\"}[1m]) / \r\n rate(windows_logical_disk_writes_total{instance=~\"$server\", volume=~\"[A-Z]:\"}[1m])) * 1000",
           "instant": false,
           "legendFormat": " {{volume}} Drive Write Latency",
           "range": true,
-          "refId": "Disk Latency (ms)"
+          "refId": "Write Latency"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "${DS_PROMETHEUS}"
+          },
+          "editorMode": "code",
+          "expr": "(rate(windows_logical_disk_read_latency_seconds_total{instance=~\"$server\", volume=~\"[A-Z]:\"}[1m]) / \r\n rate(windows_logical_disk_reads_total{instance=~\"$server\", volume=~\"[A-Z]:\"}[1m])) * 1000",
+          "instant": false,
+          "legendFormat": "{{volume}} Drive Read Latency",
+          "range": true,
+          "refId": "Read Latency"
         }
       ],
       "title": "Disk Latency",
@@ -1058,6 +1070,6 @@
   "timezone": "browser",
   "title": "Windows Server Telemetry",
   "uid": "windows-server-telemetry",
-  "version": 83,
+  "version": 89,
   "weekStart": ""
 }

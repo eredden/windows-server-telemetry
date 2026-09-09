@@ -1,6 +1,6 @@
 ## Overview
 
-This Grafana dashboard shows CPU utilization (%), memory utilization (%), non-paged memory pool size (bytes), disk space utilization (%), disk latency (ms), and the handle count (shortened number) of a single targeted Windows server. You are able to declare the server host name that you would like to see metrics from using the Server Name search bar at the top left.
+This Grafana dashboard shows CPU utilization (%), memory utilization (%), non-paged memory pool size (bytes), disk space utilization (%), disk read and write latency (ms), and the handle count (shortened number) of a single targeted Windows server. You are able to declare the server host name that you would like to see metrics from using the Server Name search bar at the top left.
 
 ![The Windows Server telemetry dashboard.](./assets/dashboard.png)
 
