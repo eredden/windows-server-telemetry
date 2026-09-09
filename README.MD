@@ -2,13 +2,13 @@
 
 This Grafana dashboard shows CPU utilization (%), memory utilization (%), non-paged memory pool size (bytes), disk space utilization (%), disk latency (ms), and the handle count (shortened number) of a single targeted Windows server. You are able to declare the server host name that you would like to see metrics from using the Server Name search bar at the top left.
 
-![The Windows Server telemetry dashboard.](.\assets\dashboard.png)
+![The Windows Server telemetry dashboard.](./assets/dashboard.png)
 
 ## Setup
 
 You can find the dashboard JSON file in the root of this repository as `windows-telemetry-grafana-dashboard.json`. Open the Dashboards menu in Grafana and use the *Import dashboard* button to copy the contents of the JSON file. That's the whole process!
 
-![The Import dashboard button.](.\assets\import.png)
+![The Import dashboard button.](./assets/import.png)
 
 ## Requirements
 
