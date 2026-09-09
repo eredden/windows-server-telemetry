@@ -1,0 +1,28 @@
+// Enable the Windows performance counter collectors.
+prometheus.exporter.windows "pc_metrics" {
+  enabled_collectors = ["cpu", "memory", "logical_disk", "net", "process"]
+}
+
+// Scrape the local exporter pipeline.
+prometheus.scrape "local_scrape" {
+  targets    = prometheus.exporter.windows.pc_metrics.targets
+  forward_to = [prometheus.remote_write.pi_receiver.receiver]
+  
+  // Same interval as our Prometheus DB.
+  scrape_interval = "15s"
+}
+
+// Streaming telemetry to my DietPI instance running Prometheus and Grafana.
+prometheus.remote_write "pi_receiver" {
+  endpoint {
+    // For your own setup, you'll need to change this path to point to your
+    // own Prometheus database rather than mine!
+    url = "http://telemetry-pi:9090/api/v1/write"
+    
+    // Optional optimizations for a low-power Pi receiver.
+    queue_config {
+      max_samples_per_send = 100
+      max_shards           = 2
+    }
+  }
+}
