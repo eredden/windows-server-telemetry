@@ -12,12 +12,12 @@ You can find the dashboard JSON file in the root of this repository as `windows-
 
 ## Requirements
 
-This dashboard expects a Prometheus database as the data source. The Prometheus database must have data from the following **prometheus.exporter.windows** collectors: **cpu**, **memory**, **logical_disk**, **net**, and **process**. An example of these collectors being used in a Grafana Alloy configuration file is presented below:
+This dashboard expects a Prometheus database as the data source. The Prometheus database must have data from the following **prometheus.exporter.windows** collectors: **cpu**, **memory**, **logical_disk**, and **process**. An example of these collectors being used in a Grafana Alloy configuration file is presented below:
 
 ```alloy
 // Enable the Windows performance counter collectors.
 prometheus.exporter.windows "pc_metrics" {
-  enabled_collectors = ["cpu", "memory", "logical_disk", "net", "process"]
+  enabled_collectors = ["cpu", "memory", "logical_disk", "process"]
 }
 ```
 

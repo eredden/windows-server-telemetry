@@ -1,6 +1,6 @@
 // Enable the Windows performance counter collectors.
 prometheus.exporter.windows "pc_metrics" {
-  enabled_collectors = ["cpu", "memory", "logical_disk", "net", "process"]
+  enabled_collectors = ["cpu", "memory", "logical_disk", "process"]
 }
 
 // Scrape the local exporter pipeline.
