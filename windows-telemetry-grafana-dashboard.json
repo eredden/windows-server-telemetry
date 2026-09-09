@@ -330,14 +330,14 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "(rate(windows_logical_disk_write_latency_seconds_total{instance=~\"$server\", volume=~\"[A-Z]:\"}[5m]) / rate(windows_logical_disk_writes_total{instance=~\"$server\", volume=~\"[A-Z]:\"}[5m])) * 1000",
+          "expr": "(rate(windows_logical_disk_write_latency_seconds_total{instance=~\"$server\", volume=~\"[A-Z]:\"}[1m]) / rate(windows_logical_disk_writes_total{instance=~\"$server\", volume=~\"[A-Z]:\"}[1m])) * 1000",
           "instant": false,
           "legendFormat": " {{volume}} Drive Write Latency",
           "range": true,
           "refId": "Disk Latency (ms)"
         }
       ],
-      "title": "Disk Latency",
+      "title": "Disk Write Latency",
       "type": "stat"
     },
     {
@@ -1050,7 +1050,7 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {
@@ -1070,6 +1070,6 @@
   "timezone": "browser",
   "title": "Windows Server Telemetry",
   "uid": "windows-server-telemetry",
-  "version": 89,
+  "version": 91,
   "weekStart": ""
 }
