@@ -27,4 +27,4 @@ You should be able to use this dashboard without issue regardless of whether you
 
 ## Attribution
 
-This dashboard was created by [Evan Redden](https://www.linkedin.com/in/eredden). Use it however you want, but don't blame me if something goes wrong! See `LICENSE.MD` for additional information.
+This dashboard was created by [Evan Redden](https://www.linkedin.com/in/eredden). Use it however you want, but don't blame me if something goes wrong! See the `LICENSE` file for additional information.
